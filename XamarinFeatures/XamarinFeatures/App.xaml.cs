@@ -1,28 +1,29 @@
-﻿using System;
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinFeatures.ViewModels;
+using XamarinFeatures.Views;
 
 namespace XamarinFeatures
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer platformInitializer): base(platformInitializer)
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+        }
+        
+        protected override void OnInitialized()
+        {
+            NavigationService.NavigateAsync("/HomePage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
         }
     }
 }
