@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinFeatures.Views.HomePage">
+             x:Class="XamarinFeatures.Views.HomePage"
+             xmlns:controls="clr-namespace:XamarinFeatures.Controls">
     <StackLayout>
         <Button Text="Press me"
                 HorizontalOptions="FillAndExpand"
@@ -10,6 +11,6 @@
         <Label Text="{Binding PositionText}"
                HorizontalOptions="Center"
                FontSize="Large"/>
-
+        <controls:CustomEntry Placeholder="Text goes here"/>
     </StackLayout>
 </ContentPage>
