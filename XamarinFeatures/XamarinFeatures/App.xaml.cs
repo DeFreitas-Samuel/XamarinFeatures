@@ -18,12 +18,13 @@ namespace XamarinFeatures
         
         protected override void OnInitialized()
         {
-            NavigationService.NavigateAsync("/HomePage");
+            NavigationService.NavigateAsync("/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>();
+            containerRegistry.RegisterForNavigation<MainPage>();
         }
     }
 }

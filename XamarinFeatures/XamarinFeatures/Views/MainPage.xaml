@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="XamarinFeatures.Views.MainPage"
+            xmlns:local="clr-namespace:XamarinFeatures.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Gray"
+            android:TabbedPage.BarSelectedItemColor="White"
+            android:TabbedPage.OffscreenPageLimit="2"
+            android:TabbedPage.IsSwipePagingEnabled="true"
+            BarBackgroundColor="LightGreen">
+
+    <NavigationPage Title="Home" IconImageSource="homeIcon" BarBackgroundColor="LightGreen">
+        <x:Arguments>
+            <local:HomePage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Page" IconImageSource="homeIcon" BarBackgroundColor="LightGreen">
+        <x:Arguments>
+            <local:DummyPage1 />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Page" IconImageSource="homeIcon" BarBackgroundColor="LightGreen">
+        <x:Arguments>
+            <local:DummyPage2 />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

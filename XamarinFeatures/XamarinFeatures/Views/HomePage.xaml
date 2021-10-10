@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinFeatures.Views.HomePage"
-             xmlns:controls="clr-namespace:XamarinFeatures.Controls">
+             xmlns:controls="clr-namespace:XamarinFeatures.Controls"
+             xmlns:effects="clr-namespace:XamarinFeatures.Effects"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
     <StackLayout>
+        <Label Text="Dependency Service"/>
         <Button Text="Press me"
                 HorizontalOptions="FillAndExpand"
                 Command="{Binding CheckPositionCommand}"
@@ -11,6 +14,23 @@
         <Label Text="{Binding PositionText}"
                HorizontalOptions="Center"
                FontSize="Large"/>
+        <Label Text="Custom Renderer"/>
         <controls:CustomEntry Placeholder="Text goes here"/>
+        <Label Text="Effect"/>
+        <Entry>
+            <Entry.Effects>
+                <effects:BorderEffect/>
+            </Entry.Effects>
+        </Entry>
+        <Label Text="Platform Specific Android"/>
+        <Grid>
+            <Button Text="Button Beneath BoxView" />
+            <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
+        </Grid>
+        <Grid Margin="0,20,0,0">
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
+            <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
+        </Grid>
     </StackLayout>
+    
 </ContentPage>
